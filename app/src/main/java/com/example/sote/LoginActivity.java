@@ -8,6 +8,8 @@ import android.os.Bundle;
  * Logs in the user into their account
  */
 
+//CONTINUE FROM HERE!!!!!!!!
+
 public class LoginActivity extends AppCompatActivity {
 
     @Override

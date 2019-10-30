@@ -10,6 +10,10 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 
+/**
+ * A blood donation application by Fatma Hilali, Raymond Sagini and Sianwa Atemi
+ */
+
 public class MainActivity extends AppCompatActivity {
     ActionBar actionBar;
 
