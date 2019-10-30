@@ -10,6 +10,9 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 /**
  * A blood donation application by Fatma Hilali, Raymond Sagini and Sianwa Atemi
  */
@@ -26,12 +29,12 @@ public class MainActivity extends AppCompatActivity {
 
 
         /* this is the code to change the color of the action/top bar */
-        actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#c7251a")));
+        //actionBar = getSupportActionBar();
+        //actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#c7251a")));
         // code to change action bar ends here
 
 
-        new Handler().postDelayed(new Runnable() {
+        /*new Handler().postDelayed(new Runnable() {
 
             @Override
             public void run(){
@@ -40,7 +43,24 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(homeIntent);
                 finish();
             }
-        },SPLASH_TIME_OUT);
+        },SPLASH_TIME_OUT);*/
+    }
+
+    //sends the user to login page if they are not signed in
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (currentUser == null) {
+            sendToLogin();
+        }
+    }
+
+    private void sendToLogin() {
+        Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(loginIntent);
+        finish();
     }
 }
 

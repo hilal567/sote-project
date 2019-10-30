@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Sote</string>
+    <string name="RegisterTest">Register Here</string>
+    <string name="email">Email...</string>
+    <string name="password">Password...</string>
+    <string name="confirm_password">Confirm Password...</string>
+    <string name="create_new_account">Create New Account</string>
+    <string name="already_have_account">Already Have Account ?</string>
+    <string name="need_a_new_account">Need a new account ?</string>
+    <string name="login">Login</string>
+    <string name="login_text">LOGIN</string>
 </resources>
