@@ -47,6 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         loginPassText = findViewById(R.id.login_pass);
         loginBtn = findViewById(R.id.login_btn);
         loginRegBtn = findViewById(R.id.login_reg_btn);
+        loginProgress = findViewById(R.id.login_progress);
 
         //send user to register page
         loginRegBtn.setOnClickListener(new View.OnClickListener() {
