@@ -70,6 +70,7 @@ public class SetupActivity extends AppCompatActivity implements AdapterView.OnIt
     private StorageReference storageReference;
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firebaseFirestore;
+    private String current_user_id;
 
 
 
@@ -88,6 +89,8 @@ public class SetupActivity extends AppCompatActivity implements AdapterView.OnIt
         user_id = firebaseAuth.getCurrentUser().getUid();
         firebaseFirestore = FirebaseFirestore.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
+
+        current_user_id = firebaseAuth.getCurrentUser().getUid();
 
         //bind images to their ID's
         setupImage = findViewById(R.id.setup_image);
@@ -129,7 +132,7 @@ public class SetupActivity extends AppCompatActivity implements AdapterView.OnIt
                         String name = task.getResult().getString("name");
                         String phone = task.getResult().getString("phone");
                         String weight = task.getResult().getString("weight");
-                        //String bloodgroup = task.getResult().getString("bloodgroup");
+                        String bloodgroup = task.getResult().getString("bloodgroup");
                         String image = task.getResult().getString("image");
 
                         mainImageURI = Uri.parse(image);
@@ -269,7 +272,7 @@ public class SetupActivity extends AppCompatActivity implements AdapterView.OnIt
         Uri download_uri;
 
         if(task != null) {
-
+            //fix this
             download_uri = task.getResult().getUploadSessionUri();
 
         } else {
@@ -284,6 +287,7 @@ public class SetupActivity extends AppCompatActivity implements AdapterView.OnIt
         userMap.put("weight", weight);
         userMap.put("bloodgroup", bloodgroup);
         userMap.put("image", download_uri.toString());
+        userMap.put("user_id", current_user_id);
 
         firebaseFirestore.collection("Users").document(user_id).set(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override

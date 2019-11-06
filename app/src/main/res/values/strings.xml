@@ -10,6 +10,20 @@
     <string name="login">Login</string>
     <string name="login_text">LOGIN</string>
 
+    <string name="bottom_home_text">Home</string>
+    <string name="bottom_search_text">Search</string>
+    <string name="bottom_edit_text">Edit</string>
+    <string name="bottom_notifications_text">Notifications</string>
+    <string name="bottom_donations_text">Donations</string>
+    <string name="logout_menu">Logout</string>
+    <string name="user_phone">Phone:</string>
+    <string name="user_blood_group">Blood Group:</string>
+    <string name="user_weight">Weight</string>
+    <string name="user_username">Username:</string>
+    <string name="make_request">Make Request</string>
+    <string name="user_donations_text">0 Donations</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
     <string-array name="bloodgrp_array">
         <item>A+</item>
         <item>A-</item>

@@ -4,6 +4,8 @@ package com.example.sote;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +15,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -25,10 +28,17 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class MainActivity extends AppCompatActivity {
 
     private Toolbar mainToolbar;
+    private BottomNavigationView mainBottomNav;
 
     private FirebaseAuth mAuth;
     private FirebaseFirestore firebaseFirestore;
     private String current_user_id;
+
+    private HomeFragment homeFragment;
+    private DonationsFragment donationsFragment;
+    private NotificationsFragment notificationsFragment;
+    private SearchFragment searchFragment;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +53,53 @@ public class MainActivity extends AppCompatActivity {
         mainToolbar = findViewById(R.id.main_toolbar);
         setSupportActionBar(mainToolbar);
 
+        if (mAuth.getCurrentUser() != null) {
 
+            //setup the bottom navigation
+            mainBottomNav = findViewById(R.id.mainBottomNav);
+            //FRAGMENTS
+            homeFragment = new HomeFragment();
+            donationsFragment = new DonationsFragment();
+            notificationsFragment = new NotificationsFragment();
+            searchFragment = new SearchFragment();
+
+            replaceFragment(homeFragment);
+
+            //change fragments when clicked
+            mainBottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    //switch case to swithc between fragments
+                    switch (item.getItemId()) {
+
+                        case R.id.bottom_action_home:
+                            replaceFragment(homeFragment);
+                            return true;
+
+                        case R.id.bottom_action_search:
+                            replaceFragment(searchFragment);
+                            return true;
+
+                        case R.id.bottom_action_edit:
+                            Intent setupIntent = new Intent(MainActivity.this, SetupActivity.class);
+                            startActivity(setupIntent);
+                            return true;
+
+                        case R.id.bottom_action_donate:
+                            replaceFragment(donationsFragment);
+                            return true;
+
+                        case R.id.bottom_action_notification:
+                            replaceFragment(notificationsFragment);
+                            return true;
+
+                            default:
+                                return false;
+                    }
+                }
+            });
+
+        }
     }
 
     //sends the user to login page if they are not signed in
@@ -88,6 +144,22 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
+
+    //logout the user
+    private void logOut() {
+        mAuth.signOut();
+        sendToLogin();
+    }
+
+    //A method to replace fragments
+    private void replaceFragment(Fragment fragment) {
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.main_container, fragment);
+        fragmentTransaction.commit();
+
+    }
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
@@ -108,12 +180,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //logout the user
-    private void logOut() {
-        mAuth.signOut();
-        sendToLogin();
-    }
-
-
+//END OF MainActivity
 }
 
