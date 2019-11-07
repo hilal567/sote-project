@@ -20,60 +20,62 @@
 
         <RelativeLayout
             android:layout_width="399dp"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp">
 
-<!--            <Button-->
-<!--                android:id="@+id/user_call_btn"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_alignParentBottom="true"-->
-<!--                android:layout_alignParentRight="true"-->
-<!--                android:text="Call"-->
-<!--                android:textAllCaps="false" />-->
+            <!--            <Button-->
+            <!--                android:id="@+id/user_call_btn"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_alignParentBottom="true"-->
+            <!--                android:layout_alignParentRight="true"-->
+            <!--                android:text="Call"-->
+            <!--                android:textAllCaps="false" />-->
 
             <TextView
                 android:id="@+id/user_phone"
-                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/user_username"
                 android:layout_marginLeft="20dp"
                 android:layout_toRightOf="@+id/user_image"
                 android:text="@string/user_phone"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/user_bloodgroup"
-                android:textStyle="bold"
                 android:layout_width="wrap_content"
-                android:textColor="@color/indian_red"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/user_phone"
                 android:layout_marginLeft="20dp"
                 android:layout_toRightOf="@+id/user_image"
                 android:text="@string/user_blood_group"
-                android:textSize="16sp" />
+                android:textColor="@color/indian_red"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/user_weight"
-                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/user_bloodgroup"
                 android:layout_marginLeft="20dp"
                 android:layout_toRightOf="@+id/user_image"
                 android:text="@string/user_weight"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/user_username"
                 android:layout_width="wrap_content"
-                android:textStyle="bold"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_toRightOf="@+id/user_image"
                 android:text="@string/user_username"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/user_image"
@@ -86,39 +88,42 @@
                 android:id="@+id/user_call_btn"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:layout_toRightOf="@+id/user_weight"
                 android:layout_alignParentBottom="true"
-                android:src="@drawable/baseline_call"/>
+                android:layout_marginLeft="78dp"
+                android:layout_marginBottom="2dp"
+                android:layout_toRightOf="@+id/user_weight"
+                android:src="@drawable/ic_action_call" />
 
             <TextView
                 android:id="@+id/user_call_text"
-                android:text="@string/make_request"
-                android:layout_alignParentBottom="true"
-                android:layout_toRightOf="@+id/user_call_btn"
-                android:layout_marginLeft="10dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="-6dp"
+                android:layout_toEndOf="@+id/user_call_btn"
+                android:layout_toRightOf="@+id/user_call_btn"
+                android:text="@string/make_request" />
 
             <ImageView
                 android:id="@+id/user_donations"
-                android:src="@drawable/trophy_black"
-                android:layout_alignParentBottom="true"
                 android:layout_width="32dp"
-                android:layout_height="32dp"/>
+                android:layout_height="32dp"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/trophy_black" />
 
             <TextView
                 android:id="@+id/user_donations_count"
-                android:text="@string/user_donations_text"
-                android:layout_alignParentBottom="true"
-                android:layout_toRightOf="@+id/user_donations"
-                android:layout_marginLeft="10dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/user_donations"
+                android:text="@string/user_donations_text" />
 
 
         </RelativeLayout>
-
-
 
 
     </androidx.cardview.widget.CardView>
