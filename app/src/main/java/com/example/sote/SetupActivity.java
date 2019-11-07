@@ -142,7 +142,7 @@ public class SetupActivity extends AppCompatActivity implements AdapterView.OnIt
                         //setupBloodgrp.setSelection(0);
 
                         RequestOptions placeholderRequest = new RequestOptions();
-                        placeholderRequest.placeholder(R.color.black);
+                        placeholderRequest.placeholder(R.drawable.image_placeholder);
 
                         Glide.with(SetupActivity.this).setDefaultRequestOptions(placeholderRequest).load(image).into(setupImage);
 
