@@ -88,10 +88,6 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(mapActivity);
                             return true;
 
-                        case R.id.bottom_action_edit:
-                            Intent setupIntent = new Intent(MainActivity.this, SetupActivity.class);
-                            startActivity(setupIntent);
-                            return true;
 
                         case R.id.bottom_action_donate:
                             replaceFragment(donationsFragment);
@@ -182,6 +178,11 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_logout_btn:
                 logOut();
+                return true;
+
+            case R.id.action_edit:
+                Intent setupIntent = new Intent(MainActivity.this, SetupActivity.class);
+                startActivity(setupIntent);
                 return true;
 
                 default:

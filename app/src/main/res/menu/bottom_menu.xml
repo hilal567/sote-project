@@ -10,8 +10,8 @@
 
     <item
         android:id="@+id/bottom_action_donate"
-        android:icon="@drawable/baseline_blood"
-        android:title="@string/bottom_donations_text"/>
+        android:icon="@drawable/ic_emergency"
+        android:title="Emergency"/>
 
     <item
         android:id="@+id/bottom_action_notification"
@@ -21,10 +21,6 @@
     <item
         android:id="@+id/bottom_action_search"
         android:icon="@drawable/baseline_local_hospital"
-        android:title="@string/bottom_search_text" />
+        android:title="@string/bottom_hospital" />
 
-    <item
-        android:id="@+id/bottom_action_edit"
-        android:icon="@drawable/baseline_create"
-        android:title="@string/bottom_edit_text" />
 </menu>

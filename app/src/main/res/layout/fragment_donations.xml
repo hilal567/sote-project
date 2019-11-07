@@ -5,10 +5,18 @@
     android:layout_height="match_parent"
     tools:context=".DonationsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="DONATIONS!" />
+
+
+        <TextView
+            android:id="@+id/emergency_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/indian_red"
+            android:text="CALL THE FOLLOWING HELPLINES INCASE OF AN EMERGENCY" />
+
+
 
 </FrameLayout>
