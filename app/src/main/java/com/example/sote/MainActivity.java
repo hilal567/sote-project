@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
                           //Temporarily work on Map first
                           case R.id.bottom_action_search:
-                            Intent mapActivity = new Intent(MainActivity.this, CurrentPlace.class);
+                            Intent mapActivity = new Intent(MainActivity.this, MapActivity.class);
                             startActivity(mapActivity);
                             return true;
 
