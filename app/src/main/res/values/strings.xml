@@ -22,6 +22,7 @@
     <string name="user_username">Username:</string>
     <string name="make_request">Make Request</string>
     <string name="user_donations_text">0 Donations</string>
+    <string name="map_key" translatable="false">AIzaSyCdH5x2f_lbDaoDVV5Bk85DGpdXZbwMMeY</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string-array name="bloodgrp_array">

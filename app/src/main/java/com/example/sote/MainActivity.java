@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,6 +21,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A blood donation application by Fatma Hilali, Raymond Sagini and Sianwa Atemi
@@ -37,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private HomeFragment homeFragment;
     private DonationsFragment donationsFragment;
     private NotificationsFragment notificationsFragment;
-    private SearchFragment searchFragment;
+
 
 
     @Override
@@ -61,9 +65,10 @@ public class MainActivity extends AppCompatActivity {
             homeFragment = new HomeFragment();
             donationsFragment = new DonationsFragment();
             notificationsFragment = new NotificationsFragment();
-            searchFragment = new SearchFragment();
+
 
             replaceFragment(homeFragment);
+
 
             //change fragments when clicked
             mainBottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -77,7 +82,8 @@ public class MainActivity extends AppCompatActivity {
                             return true;
 
                         case R.id.bottom_action_search:
-                            replaceFragment(searchFragment);
+                            Intent mapActivity = new Intent(MainActivity.this, MapActivity.class);
+                            startActivity(mapActivity);
                             return true;
 
                         case R.id.bottom_action_edit:
@@ -160,11 +166,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
+        //getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

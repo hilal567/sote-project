@@ -26,7 +26,6 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.google.android.gms.dynamic.IFragmentWrapper;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -273,7 +272,7 @@ public class SetupActivity extends AppCompatActivity implements AdapterView.OnIt
 
         if(task != null) {
             //fix this
-            download_uri = task.getResult().getUploadSessionUri();
+            download_uri = task.getResult().getDownloadUrl();
 
         } else {
 
