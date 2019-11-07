@@ -66,7 +66,7 @@ public class HomeFragment extends Fragment {
 
         //Query query = firebaseFirestore.collection("Users");
             firebaseFirestore = FirebaseFirestore.getInstance();
-            firebaseFirestore.collection("Users").addSnapshotListener(getActivity(), new EventListener<QuerySnapshot>() {
+            firebaseFirestore.collection("Users").addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot documentSnapshots, @Nullable FirebaseFirestoreException e) {
 
