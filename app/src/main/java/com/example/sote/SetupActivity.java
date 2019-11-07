@@ -271,8 +271,8 @@ public class SetupActivity extends AppCompatActivity implements AdapterView.OnIt
         Uri download_uri;
 
         if(task != null) {
-            //fix this
-            download_uri = task.getResult().getDownloadUrl();
+            //fix this Download URI not working
+            download_uri = task.getResult().getUploadSessionUri();
 
         } else {
 

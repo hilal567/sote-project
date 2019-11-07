@@ -82,8 +82,9 @@ public class MainActivity extends AppCompatActivity {
                             replaceFragment(homeFragment);
                             return true;
 
-                        case R.id.bottom_action_search:
-                            Intent mapActivity = new Intent(MainActivity.this, MapActivity.class);
+                          //Temporarily work on Map first
+                          case R.id.bottom_action_search:
+                            Intent mapActivity = new Intent(MainActivity.this, CurrentPlace.class);
                             startActivity(mapActivity);
                             return true;
 
