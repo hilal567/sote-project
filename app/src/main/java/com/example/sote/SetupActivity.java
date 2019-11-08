@@ -272,7 +272,8 @@ public class SetupActivity extends AppCompatActivity implements AdapterView.OnIt
 
         if(task != null) {
             //fix this Download URI not working
-            download_uri = task.getResult().getUploadSessionUri();
+
+            download_uri = Uri.parse(task.getResult().getMetadata().getReference().getDownloadUrl().toString());
 
         } else {
 

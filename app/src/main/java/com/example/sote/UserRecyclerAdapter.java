@@ -2,6 +2,7 @@ package com.example.sote;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.Notification;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -97,6 +98,8 @@ public class UserRecyclerAdapter extends RecyclerView.Adapter<UserRecyclerAdapte
             public void onClick(View view) {
               String phone_no = user_list.get(position).getPhone();
               context.startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phone_no)));
+
+
             }
         });
 
@@ -199,4 +202,5 @@ public class UserRecyclerAdapter extends RecyclerView.Adapter<UserRecyclerAdapte
             notifyDataSetChanged();
         }
     };
+
 }

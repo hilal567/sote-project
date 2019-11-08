@@ -20,7 +20,7 @@
         android:id="@+id/setup_image"
         android:layout_width="96dp"
         android:layout_height="96dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="36dp"
         android:src="@drawable/image_placeholder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
